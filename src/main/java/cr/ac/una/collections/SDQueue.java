@@ -7,8 +7,17 @@ public class SDQueue<T> extends DQueue<T> {
     // La función regresa los elementos que cumplen con el criterio indicado
     // SIN ALTERAR la lista original. Es decir, los elementos se agregan
     // al resultado sin eliminarlos.
-    // public SDQueue<T> select(Filter<T> f){throw new
-    // UnsupportedOperationException();}
+    //
+    public SDQueue<T> select(Filter<T> f) {
+        SDQueue<T> result = new SDQueue<>();
+        for (T val : this) {
+            if (f.isAcceptable(val)) {
+                result.add(val);
+            }
+        }
+        return result;
+    }
+
     // Este método extrae de la cola todos los elementos para los cuales
     // la función isAcceptable() del fitro especificado es verdadera
     // (regresa un valor true).
@@ -16,6 +25,13 @@ public class SDQueue<T> extends DQueue<T> {
     // con el criterio indicado.
     //
     public SDQueue<T> extract(Filter<T> f) {
-        throw new UnsupportedOperationException();
+        SDQueue<T> result = new SDQueue<>();
+        for (T val : this) {
+            if (f.isAcceptable(val)) {
+                result.add(val);
+                this.remove(val);
+            }
+        }
+        return result;
     }
 }
