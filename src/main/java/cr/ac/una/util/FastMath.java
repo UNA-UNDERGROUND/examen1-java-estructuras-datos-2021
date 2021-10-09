@@ -35,6 +35,7 @@ public class FastMath {
         return factorial_cache.get(n);
     }
 
+    // https://martin.ankerl.com/2007/10/04/optimized-pow-approximation-for-java-and-c-c/
     public static double pow(final double a, final double b) {
         final int tmp = (int) (Double.doubleToLongBits(a) >> 32);
         final int tmp2 = (int) (b * (tmp - 1072632447) + 1072632447);
