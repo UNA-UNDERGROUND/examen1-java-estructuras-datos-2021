@@ -115,10 +115,12 @@ public class BTNode<T extends Comparable<T>> {
     }
 
     public void setLeft(BTNode<T> node) {
+        node.father = this;
         left = node;
     }
 
     public void setRight(BTNode<T> node) {
+        node.father = this;
         right = node;
     }
 

@@ -3,6 +3,7 @@ package cr.ac.una;
 import cr.ac.una.ejercicios.Ejercicio1;
 import cr.ac.una.ejercicios.Ejercicio2;
 import cr.ac.una.ejercicios.Ejercicio3;
+import cr.ac.una.ejercicios.Ejercicio4;
 
 public class App {
     public static void main(String[] args) {
@@ -12,5 +13,7 @@ public class App {
         new Ejercicio2().run();
         System.out.println("Ejercicio 3:");
         new Ejercicio3().run();
+        System.out.println("Ejercicio 4:");
+        new Ejercicio4().run();
     }
 }
