@@ -1,4 +1,4 @@
-package cr.ac.una.examen1;
+package cr.ac.una;
 
 public class App {
 
