@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>2021 Georges Alfaro S.</comment>
+    <entry key="scheme">SemVer</entry>
+    <entry key="author">Georges Alfaro S</entry>
+    <entry key="version">1</entry>
+    <entry key="subversion">0</entry>
+    <entry key="revision">1</entry>
+</properties>
