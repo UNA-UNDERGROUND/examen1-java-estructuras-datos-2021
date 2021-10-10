@@ -88,25 +88,22 @@ public class FastMath {
             return val + sin(val, i + 1, max, powerCache);
         }
         int a = 2 * i + 1;
-        try {
-            Double powRes;
-            powRes = mypow(val, a);
-            if (Double.isNaN(powRes)) {
-                // funcion con menos precision
-                // con una funcion mas precisa el error disminuye
-                powRes = pow(val, a, powerCache);
-            }
-            // powRes = Math.pow(val, a);
-            double calc = (minusOnePow(i) * (powRes)) / factorial(a);
-            if (i == max) {
-                return calc;
-            }
-            return calc + sin(val, i + 1, max, powerCache);
-        } catch (Exception e) {
-            System.err.println("cache miss on: " + a);
-            System.exit(-1);
-            return -1;
+        Double powRes;
+        powRes = mypow(val, a);
+        if (Double.isNaN(powRes)) {
+            // funcion con menos precision
+            // con una funcion mas precisa el error disminuye
+            powRes = pow(val, a, powerCache);
         }
+        // powRes = Math.pow(val, a);
+        double calc = (minusOnePow(i) * (powRes)) / factorial(a);
+        if (i == max) {
+            return calc;
+        }
+        // esta sucesion de taylor esta mal copiada en el examen
+        // por lo tanto el enunciado esta erroneo
+        // https://es.wikipedia.org/wiki/Serie_de_Taylor
+        return calc + sin(val, i + 1, max, powerCache);
     }
 
     public static double sin(double val) {
