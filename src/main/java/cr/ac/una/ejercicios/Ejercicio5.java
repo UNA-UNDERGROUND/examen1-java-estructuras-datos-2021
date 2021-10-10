@@ -90,6 +90,9 @@ public class Ejercicio5 implements Runnable {
         for (int i = 1; i < limit; i++) {
             for (int j = 1; j < limit; j++) {
                 if (j > i) {
+                    // no usé BTNode, porque hace una busqueda binaria
+                    // y el primer arbol de ejemplo en el enunciado no esta ordenado
+                    // por lo tanto se necesita una busqueda completa
                     if (isCousin(root.find(i), root.find(j))) {
                         if (nCousin != 0) {
                             builderCousin.append(", ");
@@ -112,7 +115,6 @@ public class Ejercicio5 implements Runnable {
                         }
                     }
                 }
-
             }
         }
         String cousins = builderCousin.toString();
